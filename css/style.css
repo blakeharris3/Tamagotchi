@@ -1,0 +1,48 @@
+button {
+	padding: 20px;
+	margin: 30px;
+	color: red;
+	background-color: rgba();
+}
+#starter {
+	padding: 30px;
+	margin: 30px;
+	color: red;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.buttons {
+	display: inline;
+	text-align: center;
+	float: right;
+}
+#score {
+	background-color: rgba(200, 175, 120, .2);
+	width: 250px;
+}
+
+#hunger, #bored, #sleepy, #age {
+	padding: 20px;
+	margin: 10px;
+	color: yellow;
+	font-size: 32px;
+}
+
+#photo {
+	height: 200px;
+	width:200px;
+
+}
+
+body {
+	background: url('https://media.indiedb.com/images/downloads/1/48/47288/dungeon_escape_01.jpg');
+	background-repeat: no-repeat;
+	background-size: 1800px
+}
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
