@@ -1,1 +1,1 @@
-# Tomagotchi
+# Tamagotchi
