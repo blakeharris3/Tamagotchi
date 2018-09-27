@@ -1,8 +1,18 @@
+// const userInput = $('<input />').attr('id', 'name')
+// 	$('body').append(userInput)
+
+// const inputValue = $('#tamName').val()
+
+
+let timer = 0;
 const startGame = () => {
+
+	const decision = prompt('What is the name of your pet?');
+	$('#name').append(decision);
 
 	class Tamagotchi {
 		constructor(name) {
-			this.name = name;
+			this.name = decision;
 			this.isAlive = true;
 			this.hunger = 0;
 			this.sleepiness = 0;
@@ -11,43 +21,46 @@ const startGame = () => {
 		}
 
 		ageInc() {
-			const interval = setInterval(() => {
-				this.age++;	
+			const ageInterval = setInterval(() => {
+				this.age++;
 				console.log(this.age)
-				$('#age').text('Age: ' + this.age)
-				if (this.age === 3) {
-					$('#photo').attr('src', 'https://media.giphy.com/media/U4Q6v5tkTLrXi/giphy.gif')
+				if (this.isAlive === false) {
+					clearInterval(ageInterval);
+				} else {
+					$('#age').text('Age: ' + this.age)
+					if (this.age === 5) {
+						$('#photo').attr('src', 'mediumdragon.png')
+						alert(`${decision} is getting older`)
+					}
+					if (this.age === 15) {
+						$('#photo').attr('src', 'olddragon.png')
+						alert(`${decision} is getting pretty old`)
+					}
+					if (this.age === 25) {
+						this.isAlive = false
+						$('#photo').attr('src', 'deaddragon.png')
+						alert(this.name + ' has died of old age');
+						clearInterval(interval)
+					}
 				}
-				if (this.age === 15) {
-					$('#photo').attr('src', 'http://bestanimations.com/Fantasy/Dragons/dragon-animated-gif-60.gif')
-				}
-				if (this.age === 30) {
-					$('#photo').attr('src', 'https://i.imgur.com/v1GIFns.jpg')
-					alert(this.name + ' has died of old age');
-					clearInterval(interval)
-				}
-
-			}, 600000)
+			}, 2000)
 		}
 
 		hungerInc() {
-			
-
 			const hungerInterval = setInterval(() => {
 				if (this.hunger === 10) {
-					this.isAlive =
-					 false
+					this.isAlive = false
 					alert(this.name + ' has died of hunger')
-					$('#photo').attr('src', 'https://i.imgur.com/oKqvI75.png')	
+					$('#photo').attr('src', 'deaddragon.png')
 					clearInterval(hungerInterval)
-					}
+				}
 				if (this.isAlive === false) {
-				 	clearInterval(hungerInterval);
-				 	
+					clearInterval(hungerInterval);
+
 				} else {
-					this.hunger++;	
+					this.hunger++;
 					console.log(this.hunger)
-					$('#hunger').text('Hunger: ' + this.hunger) 
+					$('#hunger').text('Hunger: ' + this.hunger)
 				}
 			}, 10000)
 		}
@@ -58,17 +71,17 @@ const startGame = () => {
 				if (this.sleepiness === 10) {
 					this.isAlive = false;
 					alert(this.name + ' has died of sleepiness')
-					$('#photo').attr('src', 'https://i.imgur.com/oKqvI75.png')
+					$('#photo').attr('src', 'deaddragon.png')
 					clearInterval(sleepInterval)
-					}
+				}
 				if (this.isAlive === false) {
-				 	clearInterval(sleepInterval)
+					clearInterval(sleepInterval)
 				} else {
-					this.sleepiness++;	
+					this.sleepiness++;
 					console.log(this.sleepiness)
 					$('#sleepy').text('Sleepiness: ' + this.sleepiness)
-				}	
-			}, 4000)
+				}
+			}, 9000)
 		}
 
 		boredomInc() {
@@ -76,31 +89,25 @@ const startGame = () => {
 				if (this.boredom === 10) {
 					this.isAlive = false
 					alert(this.name + ' has died of boredom')
-					$('#photo').attr('src', 'https://i.imgur.com/oKqvI75.png')
+					$('#photo').attr('src', 'deaddragon.png')
 					clearInterval(boredInterval)
-					}
+				}
 				if (this.isAlive === false) {
-			 		clearInterval(boredInterval)
+					clearInterval(boredInterval)
 				} else {
-					this.boredom++;	
+					this.boredom++;
 					console.log(this.boredom)
 					$('#bored').text('Boredom: ' + this.boredom)
 				}
 			}, 11000)
 		}
 
-		morph() {
-			if (this.age === 3) {
-				$('#photo').attr('src', 'https://media.giphy.com/media/U4Q6v5tkTLrXi/giphy.gif')
-			}
-		}
-
 		resetFeed() {
 			$('#photo').velocity('callout.shake')
 			this.hunger--;
-			$('#hunger').text('Hunger: ' + this.hunger) 
+			$('#hunger').text('Hunger: ' + this.hunger)
 			return this.hunger
-			}
+		}
 
 		resetSleepiness() {
 			$('#photo').velocity('callout.flash')
@@ -115,67 +122,55 @@ const startGame = () => {
 			$('#bored').text('Boredom: ' + this.boredom)
 			return this.boredom
 		}
-		
+
 
 
 
 	}
 
 
-	const phil = new Tamagotchi('Phil');
-	phil.ageInc()
-	phil.hungerInc()
-	phil.sleepinessInc()
-	phil.boredomInc()
-	phil.morph()
-	const name = new Tamagotchi() 
+	const name = new Tamagotchi(decision);
+	name.ageInc()
+	name.hungerInc()
+	name.sleepinessInc()
+	name.boredomInc()
 
+	const setTimer = () => {
+		const timerInterval = setInterval(() => {
+			if (name.isAlive === true) {
+				timer++;
+				$('#timer').text('Time Alive: ' + timer + ' sec')
+			} else {
+				clearInterval(timerInterval);
+			}
+		}, 1000)
+	}
+	setTimer();
 
-
-const gameControls = {
+	const gameControls = {
 		resetFeed() {
 
-			phil.resetFeed();
+			name.resetFeed();
 		},
 
 		resetSleep() {
-			phil.resetSleepiness();
+			name.resetSleepiness();
 		},
 
 		resetBoredom() {
-			phil.resetBoredom();
+			name.resetBoredom();
 		}
 
 	}
-$('#feed').on('click', gameControls.resetFeed)	
-$('#lights').on('click', gameControls.resetSleep)	
-$('#play').on('click', gameControls.resetBoredom)	
+	$('#feed').on('click', gameControls.resetFeed)
+	$('#lights').on('click', gameControls.resetSleep)
+	$('#play').on('click', gameControls.resetBoredom)
+
+
 
 }
 
 $('#starter').on('click', startGame)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

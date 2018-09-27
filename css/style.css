@@ -1,46 +1,88 @@
 button {
 	padding: 20px;
 	margin: 30px;
-	color: red;
-	background-color: rgba();
+	font-size: 26px;
+	color: black;
+	font-weight: bold;
 }
+
+h1 {
+	color: #f3ef03;
+	text-align: center;
+}
+
+
 #starter {
 	padding: 30px;
 	margin: 30px;
-	color: red;
+	color: black;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 50px;
+	background: #03f33f
+}
+
+#reset {
+	padding: 20px;
+	margin: 20px;
+	color: black;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .buttons {
-	display: inline;
 	text-align: center;
-	float: right;
-}
-#score {
-	background-color: rgba(200, 175, 120, .2);
-	width: 250px;
+	position: relative;
 }
 
-#hunger, #bored, #sleepy, #age {
+#score {
+	background: linear-gradient(#f80c04c4, #eef109c4, #f80c04c4);
+	width: 250px;
+	text-align: center;
+	position: relative;
+	margin: 0 auto;
+	font-weight: 700;
+}
+
+#name,
+#hunger,
+#bored,
+#sleepy,
+#age {
 	padding: 20px;
 	margin: 10px;
-	color: yellow;
+	color: black;
 	font-size: 32px;
 }
 
 #photo {
-	height: 200px;
-	width:200px;
+	height: 400px;
+	width: 400px;
+}
 
+#feed {
+	background: linear-gradient(#f80c04c4, #eef109c4, #f80c04c4);
+	border-radius: 40px;
+}
+
+#lights {
+	background: linear-gradient(#f80c04c4, #eef109c4, #f80c04c4);
+	border-radius: 40px;
+}
+
+#play {
+	background: linear-gradient(#f80c04c4, #eef109c4, #f80c04c4);
+	border-radius: 40px;
 }
 
 body {
 	background: url('https://media.indiedb.com/images/downloads/1/48/47288/dungeon_escape_01.jpg');
 	background-repeat: no-repeat;
-	background-size: 1800px
+	background-size: cover;
 }
+
 img {
 	display: block;
 	margin-left: auto;

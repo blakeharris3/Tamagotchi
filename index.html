@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<link rel="stylesheet" type="text/css" href=" css/style.css">
 	<title></title>
 </head>
+
 <body>
 	<button id='starter'>Start Game</button>
-	<h1></h1>
-<div id='myToma' >
+	<h1 id='timer'>Time Alive: 0 sec</h1>
+	<!-- <button id='reset'>Reset Game</button> -->
 
-	<img id='photo' src="https://media.giphy.com/media/1e96RYE1Pbq3C/giphy.gif">
-</div>
+	<div id='myToma'>
+
+		<img id='photo' src="babydragon.png">
+	</div>
+
 	<div class='buttons'>
- 		<button id='feed'>Feed</button>
- 	
- 		<button id='lights'>Lights</button>
- 			
- 		<button id='play'>Play</button>
- 		<div id='score'>
+		<button id='feed'>Feed</button>
+
+		<button id='lights'>Lights</button>
+
+		<button id='play'>Play</button>
+		<div id='score'>
+			<div id='name'>Name: </div>
 			<div id='hunger'>Hunger: 0</div>
 			<div id='sleepy'>Sleepiness: 0</div>
 			<div id='bored'>Boredom: 0</div>
@@ -25,12 +31,10 @@
 		</div>
 
 	</div>
- 	
-
-
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js'></script>
-<script src='js/app.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.js'></script>
+	<script src='js/app.js'></script>
 </body>
+
 </html>
