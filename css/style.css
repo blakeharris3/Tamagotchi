@@ -46,6 +46,7 @@ h1 {
 	font-weight: 700;
 }
 
+/* Nice job selecting multiple ids like this!*/
 #name,
 #hunger,
 #bored,
@@ -78,6 +79,11 @@ h1 {
 }
 
 body {
+	/* Using images sourced from online have their pros and cons, 
+		but the best rule of thumb is to source your images locally
+		inside of a imgs directory.
+	
+	*/
 	background: url('https://media.indiedb.com/images/downloads/1/48/47288/dungeon_escape_01.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -88,3 +94,11 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 }
+
+/*
+	Good job here Blake! I really appreciate your hard work and
+	focus! Your Tamagotchi project was very creative and contained
+	a lot of functionality! You also went to the effort of applying
+	plenty of styles and animations!
+
+*/
