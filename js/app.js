@@ -172,5 +172,12 @@ const startGame = () => {
 
 $('#starter').on('click', startGame)
 
-
+/* Awesome code quality here Blake! Also, you made a good use of a JavaScript class
+ * to create tamagotchi objects.
+ *
+ * One small suggestion here would be to remove any commented out / non-functional code
+ * from your master branch.
+ * 
+ * Keep up the good work Blake!
+ */
 
